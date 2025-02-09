@@ -25,6 +25,8 @@ describe("test for Books", () => {
       useUnifiedTopology: true,
     });
 
+    console.log(client)
+
     await client.connect();
     database = client.db(DB_NAME);
   });

@@ -10,7 +10,7 @@ describe("test for hello world endpoint", () => {
   let server = null;
   beforeAll(() => {
     app = createApp();
-    server = app.listen(3000);
+    server = app.listen(3001);
   });
 
   afterAll(async () => {

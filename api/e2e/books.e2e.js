@@ -18,14 +18,12 @@ describe("test for Books", () => {
 
   beforeAll(async () => {
     app = createApp();
-    server = app.listen(3000);
+    server = app.listen(3002);
 
     const client = new MongoClient(MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-
-    console.log(client)
 
     await client.connect();
     database = client.db(DB_NAME);

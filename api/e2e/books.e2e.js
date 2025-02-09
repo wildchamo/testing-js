@@ -45,6 +45,7 @@ describe("test for Books", () => {
         .get("/api/v1/books")
         .expect(200)
         .then(({ body }) => {
+          console.log(body);
           expect(body.length).toEqual(seedData.insertedCount);
         });
     });

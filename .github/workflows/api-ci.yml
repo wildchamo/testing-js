@@ -58,7 +58,7 @@ jobs:
       db-e2e:
         image: mongo:4.4
         ports:
-          - 27021:27017
+          - 27017:27017
         env:
           MONGO_INITDB_ROOT_USERNAME: test
           MONGO_INITDB_ROOT_PASSWORD: test123
@@ -66,6 +66,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Wait for MongoDB
+        run: |
+          for i in {1..30}; do
+            nc -z db-e2e 27017 && echo "MongoDB is up" && exit 0
+            echo "Waiting for MongoDB..."
+            sleep 2
+          done
+          echo "MongoDB did not start in time" && exit 1
+
       - name: Install dependencies
         shell: bash
         run: npm ci
@@ -75,5 +85,5 @@ jobs:
         env:
           NODE_ENV: test
           MONGO_DB_NAME: demo
-          MONGO_URL: mongodb://test:test123@db-e2e:27021?retryWrites=true&writeConcern=majority
-          MONGO_URL_TEST: mongodb://test:test123@db-e2e:27021?retryWrites=true&writeConcern=majority
+          # MONGO_URL: mongodb://test:test123@db-e2e:27017?retryWrites=true&writeConcern=majority
+          MONGO_URL_TEST: mongodb://test:test123@db-e2e:27017?retryWrites=true&writeConcern=majority

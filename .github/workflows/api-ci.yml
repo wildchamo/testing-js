@@ -60,8 +60,8 @@ jobs:
         ports:
           - 27021:27017
         env:
-          MONGO_INITDB_ROOT_USERNAME: root
-          MONGO_INITDB_ROOT_PASSWORD: root123
+          MONGO_INITDB_ROOT_USERNAME: test
+          MONGO_INITDB_ROOT_PASSWORD: test123
 
     steps:
       - name: Checkout
@@ -77,4 +77,3 @@ jobs:
           MONGO_DB_NAME: demo
           MONGO_URL: mongodb://test:test123@mongo-e2e:27021?retryWrites=true&writeConcern=majority
           MONGO_URL_TEST: mongodb://test:test123@mongo-e2e:27021?retryWrites=true&writeConcern=majority
-

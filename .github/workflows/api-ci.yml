@@ -58,7 +58,7 @@ jobs:
       db-e2e:
         image: mongo:4.4
         ports:
-          - 27017:27017
+          - 27021:27017
         env:
           MONGO_INITDB_ROOT_USERNAME: test
           MONGO_INITDB_ROOT_PASSWORD: test123
@@ -77,5 +77,4 @@ jobs:
           NODE_ENV: test
           MONGO_DB_NAME: demo
           # MONGO_URL: mongodb://test:test123@db-e2e:27017?retryWrites=true&writeConcern=majority
-          MONGO_URL_TEST: mongodb://test:test123@db-e2e:27017?retryWrites=true&writeConcern=majority
-
+          MONGO_URL_TEST: mongodb://test:test123@db-e2e:27021?retryWrites=true&writeConcern=majority

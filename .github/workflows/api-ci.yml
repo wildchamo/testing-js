@@ -76,6 +76,7 @@ jobs:
         env:
           NODE_ENV: test
           MONGO_DB_NAME: demo
+          
           # MONGO_URL: mongodb://test:test123@db-e2e:27017?retryWrites=true&writeConcern=majority
           MONGO_URL_TEST: mongodb://test:test123@db-e2e:27017?retryWrites=true&writeConcern=majority
 

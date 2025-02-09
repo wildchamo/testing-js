@@ -20,6 +20,7 @@ describe("test for Books", () => {
     app = createApp();
     server = app.listen(3002);
 
+    console.log(MONGO_URI);
     const client = new MongoClient(MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,

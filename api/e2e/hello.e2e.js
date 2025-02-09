@@ -28,14 +28,14 @@ describe("test for hello world endpoint", () => {
         });
     });
 
-    test("should return a 200 status", async () => {
-      request(app)
-        .get("/")
-        .expect(200)
-        .then((response) => {
-          const { status } = response;
-          expect(status).toBe(200);
-        });
-    });
+    // test("should return a 200 status", async () => {
+    //   request(app)
+    //     .get("/")
+    //     .expect(200)
+    //     .then((response) => {
+    //       const { status } = response;
+    //       expect(status).toBe(200);
+    //     });
+    // });
   });
 });

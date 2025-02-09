@@ -71,7 +71,7 @@ jobs:
         run: npm ci
       - name: Run e2e tests
         shell: bash
-        run: npm run test:2e2
+        run: npm run test:e2e
         env:
           MONGO_DB_NAME: demo
           MONGO_URL: mongodb://test:test123@mongo-e2e:27021?retryWrites=true&writeConcern=majority

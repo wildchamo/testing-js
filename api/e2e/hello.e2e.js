@@ -24,7 +24,6 @@ describe("test for hello world endpoint", () => {
         .expect(200)
         .then((response) => {
           const { text } = response;
-          console.log(text);
           expect(text).toContain("Hello World");
         });
     });
@@ -35,7 +34,6 @@ describe("test for hello world endpoint", () => {
         .expect(200)
         .then((response) => {
           const { status } = response;
-          console.log(status);
           expect(status).toBe(200);
         });
     });
